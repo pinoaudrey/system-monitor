@@ -1,4 +1,4 @@
-# SysHUD
+# System Monitor
 
 Menu bar system monitor for macOS. Shows live CPU and memory in the menu bar
 (`38% 21.4G`), with a dropdown panel listing the top processes by CPU or
@@ -12,13 +12,19 @@ read and signal other processes).
 
 ```bash
 ./make-app.sh
-open build/SysHUD.app
+open "build/System Monitor.app"
 ```
 
-To install permanently: `cp -R build/SysHUD.app /Applications/` and enable
+To install permanently: `cp -R "build/System Monitor.app" /Applications/` and enable
 "Launch at login" in the dropdown. For other Macs, build there or copy the
 .app (ad-hoc signed, so Gatekeeper may need right-click > Open on first
 launch).
+
+Until 2026-10-06 the app had the name SysHUD and the bundle id
+`com.audreypino.syshud`. The Swift targets and the executable keep the old name.
+A login item keeps the name from its first registration, so the rename needed a
+new bundle id. To move the old preferences, run this once:
+`defaults export com.audreypino.syshud - | defaults import com.audreypino.system-monitor -`.
 
 ## Headless check
 
@@ -54,7 +60,7 @@ narrower). Two mitigations here:
   ~75pt), persisted in UserDefaults.
 - The item's slot can be pinned by writing the app's own preferred-position
   default before launch, e.g.
-  `defaults write com.audreypino.syshud "NSStatusItem Preferred Position Item-0" -float 560`.
+  `defaults write com.audreypino.system-monitor "NSStatusItem Preferred Position Item-0" -float 560`.
   Cmd-dragging the item overwrites this, which is the normal way to reorder.
 
 ## Killing processes

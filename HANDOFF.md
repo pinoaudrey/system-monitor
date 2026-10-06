@@ -1,4 +1,4 @@
-# SysHUD handoff
+# System Monitor handoff (formerly SysHUD)
 
 2026-08-06: v1 shipped, pushed to pinoaudrey/syshud (root commit 32bbac9).
 2026-08-16: the syshud-v2 run closed every v1 verification gap and built
@@ -6,6 +6,11 @@ auto-compact (PR #1). Full evidence: `~/agent-projects/syshud-v2/`.
 2026-08-18: branch `perf-and-app-grouping`. Cut SysHUD's own CPU cost
 (probe gating, uid cache, publish-on-change) and grouped the panel by
 responsible app. The probe now judges visibility on the item's own screen.
+2026-10-06: renamed to System Monitor. The repo is now
+pinoaudrey/system-monitor, at `~/Documents/Projects/system-monitor`. The app is
+`/Applications/System Monitor.app` with the bundle id
+`com.audreypino.system-monitor`. The preferences moved to the new id. The old
+login item is off. The Swift targets and the executable keep the name SysHUD.
 
 ## State
 
@@ -26,8 +31,7 @@ evidence in the project state dir:
 
 ## Machine state right now
 
-- Installed to `/Applications/SysHUD.app`, running from there (built from
-  merged main, f2966ff).
+- Installed to `/Applications/System Monitor.app`, running from there.
 - Launch at login: ON. The BTM record is keyed by bundle id and self-heals
   its URL to the running bundle's path.
 - `compactLabel = 0`; auto-compact handles overflow.
