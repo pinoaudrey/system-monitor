@@ -54,7 +54,7 @@ struct HUDView: View {
                     .toggleStyle(.checkbox)
                     .font(.caption)
                 Spacer()
-                Button("Quit SysHUD") { NSApplication.shared.terminate(nil) }
+                Button("Quit System Monitor") { NSApplication.shared.terminate(nil) }
                     .font(.caption)
             }
             Text("✕ quits the process (SIGTERM), ⌥-click force kills (SIGKILL)")
